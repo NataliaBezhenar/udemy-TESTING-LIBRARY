@@ -13,3 +13,22 @@ describe("Options", () => {
     expect(altText).toStrictEqual(["chocolate scoop", "vanilla scoop"]);
   });
 });
+
+describe("Toppings", () => {
+  test("displays image for toppings", async () => {
+    render(<Options optionType="toppings" />);
+
+    const toppingImages = await screen.findAllByRole("img", {
+      name: /topping$/i,
+    });
+
+    expect(toppingImages).toHaveLength(3);
+
+    const imageTitles = toppingImages.map((img) => img.alt);
+    expect(imageTitles).toStrictEqual([
+      "cherries topping",
+      "M&Ms topping",
+      "hot fudge topping",
+    ]);
+  });
+});
