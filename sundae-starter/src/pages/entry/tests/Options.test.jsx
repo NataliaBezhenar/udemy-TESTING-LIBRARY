@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 
 import Options from "../Options";
 
@@ -10,7 +10,7 @@ describe("Options", () => {
     expect(scoopImages).toHaveLength(2);
 
     const altText = scoopImages.map((el) => el.alt);
-    expect(altText).toStrictEqual(["chocolate scoop", "vanilla scoop"]);
+    expect(altText).toEqual(["Chocolate scoop", "Vanilla scoop"]);
   });
 });
 
@@ -25,10 +25,10 @@ describe("Toppings", () => {
     expect(toppingImages).toHaveLength(3);
 
     const imageTitles = toppingImages.map((img) => img.alt);
-    expect(imageTitles).toStrictEqual([
-      "cherries topping",
+    expect(imageTitles).toEqual([
+      "Cherries topping",
       "M&Ms topping",
-      "hot fudge topping",
+      "Hot fudge topping",
     ]);
   });
 });
