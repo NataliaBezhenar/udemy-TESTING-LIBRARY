@@ -18,7 +18,7 @@ export function OrderSummary() {
       <h1>Order Summary</h1>
       <h2>Scoops: {formatCurrency(totals.scoops)}</h2>
       <ul>{scoopList}</ul>
-      <h2>Scoops: {formatCurrency(totals.toppings)}</h2>
+      <h2>Toppings: {formatCurrency(totals.toppings)}</h2>
       <ul>{toppingsList}</ul>
       <SummaryForm />
     </div>
