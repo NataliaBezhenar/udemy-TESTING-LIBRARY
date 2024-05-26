@@ -15,13 +15,18 @@ export default function Options({ optionType }) {
   const { totals } = useOrderDetails();
 
   useEffect(() => {
+    const controller = new AbortController();
     axios
       .get(`http://localhost:3030/${optionType}`)
       .then((response) => setItems(response.data))
-      // eslint-disable-next-line no-unused-vars
       .catch((error) => {
         setError(true);
+        console.error(error);
       });
+
+    return () => {
+      controller.abort();
+    };
   }, [optionType]);
 
   if (error) {
