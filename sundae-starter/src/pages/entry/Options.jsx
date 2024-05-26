@@ -8,7 +8,6 @@ import { pricePerItem } from "../../constants";
 import { formatCurrency } from "../../utils";
 import { useOrderDetails } from "../../contexts/OrderDetails";
 
-// eslint-disable-next-line react/prop-types
 export default function Options({ optionType }) {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(false);
